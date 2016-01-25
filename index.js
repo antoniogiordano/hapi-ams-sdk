@@ -9,7 +9,9 @@ const Joi = require('joi');
 
 const optionsSchema = Joi.object({
     client_id: Joi.string(),
-    client_secret: Joi.string()
+    client_secret: Joi.string(),
+    mediaURI: Joi.string().optional(),
+    tokenURI: Joi.string().optional()
 });
 
 exports.register = (server, pluginOptions, next) => {
