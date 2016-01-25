@@ -74,7 +74,7 @@ Requires a channelId like ''nb:chid:UUID:2c30f424-ab90-40c6-ba41-52a993e9d393''.
 
 Requires a channelId like ''nb:chid:UUID:2c30f424-ab90-40c6-ba41-52a993e9d393''. Will return an object with a 'operationId' property (String). You can use this operationId string to poll AMS with a 'getOperationState' call.
 
-### Operation
+### Operations
 -------------
 
 ####getOperationState(operationId, [cb])
