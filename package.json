@@ -1,0 +1,35 @@
+{
+  "name": "hapi-ams-sdk",
+  "version": "0.0.1",
+  "description": "Hapi plugin for Microsoft Azure Media Services REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniogiordano/hapi-ams-sdk.git"
+  },
+  "dependencies": {
+    "joi": "^7.2.2",
+    "moment": "^2.6.0",
+    "request": "^2.34.0",
+    "through": "^2.3.4"
+  },
+  "keywords": [
+    "Azure",
+    "Media",
+    "Services",
+    "AMS",
+    "REST",
+    "API",
+    "Azure",
+    "Microsoft"
+  ],
+  "author": "Antonio Giordano <antonio.giordano@getapper.com> (http://www.getapper.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antoniogiordano/hapi-ams-sdk/issues"
+  },
+  "homepage": "https://github.com/antoniogiordano/hapi-ams-sdk#readme"
+}
