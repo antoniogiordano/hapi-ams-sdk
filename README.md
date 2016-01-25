@@ -69,3 +69,14 @@ Takes an optional callback. Will list all channels - streaming if no cb.
 ####getChannel(channelId, [cb])
 
 Requires a channelId like ''nb:chid:UUID:2c30f424-ab90-40c6-ba41-52a993e9d393''. Will return all information for a channel. Will stream if optional callback is not provided.
+
+####resetChannel(channelId, cb)
+
+Requires a channelId like ''nb:chid:UUID:2c30f424-ab90-40c6-ba41-52a993e9d393''. Will return an object with a 'operationId' property (String). You can use this operationId string to poll AMS with a 'getOperationState' call.
+
+### Operation
+-------------
+
+####getOperationState(operationId, [cb])
+
+Requires a operationId like ''nb:opid:UUID:9e17ee32-99eb-45f0-8b0f-08f4e8304833''. Will return all information for a long operation like Start/Stop/Reset Channel. Will stream if optional callback is not provided.
