@@ -1,13 +1,12 @@
 # hapi-ams-sdk
 
-Hapi plugin for Microsoft Azure Media Services REST API
+Hapi plugin for Microsoft Azure Media Services REST API, based on node-ams-sdk project, but wrapped in an Hapi plugin with Channels support
 
 
 ## Usage
 
 
 ```
-//Eventually...
 
 npm i --save hapi-ams-sdk
 
@@ -16,7 +15,7 @@ npm i --save hapi-ams-sdk
 You initialize the service by providing a configuration object
 
 ```
-var AzureService  = require('hapi-ams-sdk')
+var HapiAmsSdk  = require('hapi-ams-sdk')
 
 var configObj = {
   client_id: "",
@@ -25,7 +24,35 @@ var configObj = {
 
 var serviceConfig = require('../path/to/config') || configObj
 
-var amsService = new AzureService(serviceConfig)
+...
+
+// Register Azure Media Services REST API wrapper plugin
+
+server.register({
+  register: HapiAmsSdk,
+  options: serviceConfig
+}, (err) => {
+  if (err) {
+    console.log(err)
+    throw err
+  }
+
+  // You can always access the amsService in your Hapi project
+  var amsService = server.plugins['hapi-ams-sdk'].amsService
+  var data = ''
+  amsService.listChannels()
+   .on('data', (d) => {
+     data += d
+     console.log(d)
+   })
+   .on('error', (e) => {
+     console.log(e)
+   })
+   .on('end', () => {
+     console.log(data)
+     // var jsonData = JSON.parse(data)
+   })
+})
 
 ```
 
